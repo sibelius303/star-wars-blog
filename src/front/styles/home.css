@@ -6,8 +6,12 @@
     on that page only (the ones not reused in other pages).
 */
 .container {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+
 }
 
 .containerPeople {
@@ -18,4 +22,10 @@
 
 .containerPlanets {
     display: flex;
+}
+
+.card{
+    width: 400px;
+    height: 400px;
+
 }

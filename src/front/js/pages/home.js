@@ -47,18 +47,18 @@ export const Home = () => {
 			{
 				people.map((person)=>{
 					return (
-						<Card style={{ width: '18rem' }}> 						
-						<Card.Img variant="top" src="holder.js/100px180" />
+						<Card className="card" style={{ width: '18rem' }}> 						
+						<Card.Img variant="top" src="https://starwars-visualguide.com/assets/img/characters/1.jpg" />
 						   <Card.Body>
 							  <Card.Title>{person.name}</Card.Title>
 								 <Card.Text>
-							   <p>climate: {person.hair_color}</p>
-							 <p>graviti: {person.eye_color}</p>
-							 <p>terrain: {person.gender}</p>
+							   <p>hair olor: {person.hair_color}</p>
+							 <p>eye color: {person.eye_color}</p>
+							 <p>gender: {person.gender}</p>
 							 </Card.Text>
 							<Button variant="primary">More Details</Button>
 							</Card.Body>
-								 </Card>
+						 </Card>
 
 					)
 				})
