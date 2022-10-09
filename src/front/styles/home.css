@@ -5,27 +5,15 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
-.container {
-    width: 100%;
+.container{
     display: flex;
-    overflow-x: scroll;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x proximity;
-
+    flex-direction: column;
 }
 
-.containerPeople {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-}
-
-.containerPlanets {
+.containerPeople{
     display: flex;
 }
 
-.card{
-    width: 400px;
-    height: 400px;
-
+.containerPlanets{
+    display: flex;
 }

@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Card } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 
 export const Home = () => {
@@ -44,10 +45,11 @@ export const Home = () => {
 
 	return (
 		<div className="container">
+			<div className="containerPeople">
 			{
 				people.map((person)=>{
 					return (
-						<Card className="card" style={{ width: '18rem' }}> 						
+						<Card style={{ width: '18rem' }}> 						
 						<Card.Img variant="top" src="https://starwars-visualguide.com/assets/img/characters/1.jpg" />
 						   <Card.Body>
 							  <Card.Title>{person.name}</Card.Title>
@@ -56,13 +58,37 @@ export const Home = () => {
 							 <p>eye color: {person.eye_color}</p>
 							 <p>gender: {person.gender}</p>
 							 </Card.Text>
-							<Button variant="primary">More Details</Button>
+							 <Link to={"/single"}>
+								 <Button variant="primary">More Details</Button>
+							 </Link>
 							</Card.Body>
 						 </Card>
 
 					)
 				})
 			}
+			</div>
+			<div className="containerPlanets">
+				{
+					planets.map((planet)=>{
+						return (
+							<Card style={{ width: '18rem' }}> 						
+						<Card.Img variant="top" src="https://starwars-visualguide.com/assets/img/planets/2.jpg" />
+						   <Card.Body>
+							  <Card.Title>{planet.name}</Card.Title>
+								 <Card.Text>
+							   <p>gravity: {planet.gravity}</p>
+							 <p>climate: {planet.climate}</p>
+							 <p>terrain: {planet.terrain}</p>
+							 </Card.Text>
+							<Button variant="primary">More Details</Button>
+							</Card.Body>
+						 </Card>
+						);
+					})
+				}
+			</div>
+
 		</div>
 	);
 };
