@@ -5,15 +5,30 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
-.container{
-    display: flex;
-    flex-direction: column;
+
+.containerApp{
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .containerPeople{
     display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px;
+}
+
+.cardPerson{
+    min-width: 300px;
+    height: 300px;
 }
 
 .containerPlanets{
     display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px;
 }
+
