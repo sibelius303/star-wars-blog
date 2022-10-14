@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-function MyPlanetsCard( detail,id ) {
+function MyPlanetsCard( {details} ) {
   return (
 	<Card style={{ minWidth: "18rem" }}>
 	<Card.Img
@@ -13,11 +13,11 @@ function MyPlanetsCard( detail,id ) {
 	  src="https://starwars-visualguide.com/assets/img/planets/2.jpg"
 	/>
 	<Card.Body>
-	  <Card.Title>{detail.name}</Card.Title>
+	  <Card.Title>{details.name}</Card.Title>
 	  <Card.Text>
-		<p>climate: {detail.climate}</p>
-		<p>graviti: {detail.gravity}</p>
-		<p>terrain: {detail.terrain}</p>
+		<p>climate: {details.climate}</p>
+		<p>graviti: {details.gravity}</p>
+		<p>terrain: {details.terrain}</p>
 	  </Card.Text>
 	</Card.Body>
 	<Card.Footer style={{display:"flex", justifyContent:"space-between"}}>

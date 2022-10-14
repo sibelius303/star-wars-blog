@@ -49,15 +49,7 @@ export const Home = () => {
         <div className="containerPlanets">
           {planets.map(( planet,id ) => {
             return (
-              <MyPlanetsCard key={id} detail={planet}/>
-            );
-          })}
-        </div>
-		<h2>Planets</h2>
-        <div className="containerPlanets">
-          {planets.map(( planet,id ) => {
-            return (
-              <MyPlanetsCard key={id} detail={planet}/>
+              <MyPlanetsCard key={id} details={planet}/>
             );
           })}
         </div>
