@@ -20,12 +20,14 @@
     padding: 20px;
 }
 
-.cardPerson{
-    min-width: 300px;
-    height: 300px;
+.containerPlanets{
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px;
 }
 
-.containerPlanets{
+.containerVehicles{
     display: flex;
     overflow-x: auto;
     gap: 10px;

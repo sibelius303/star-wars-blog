@@ -52,6 +52,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  console.log(error);
 				}
 			  },
+			  getVehicles: async () => {
+				try {
+				  const response = await fetch("https://swapi.dev/api/vehicles");
+				  const data = await response.json();
+				  setStore({ vehicles:data.results });
+				} catch (error) {
+				  console.log(error);
+				}
+			  },
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
