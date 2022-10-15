@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-function MyPlanetsCard( {details} ) {
+function MyPlanetsCard( {details, id} ) {
   return (
 	<Card style={{ minWidth: "18rem" }}>
 	<Card.Img
@@ -21,7 +21,7 @@ function MyPlanetsCard( {details} ) {
 	  </Card.Text>
 	</Card.Body>
 	<Card.Footer style={{display:"flex", justifyContent:"space-between"}}>
-		<Link to={'/single/:theid'}>
+		<Link to={'/single/:'+{id}}>
 			<Button variant="primary">See More</Button>
 		</Link>
 			<Button variant="primary"><FavoriteBorderIcon/></Button>

@@ -6,7 +6,8 @@ import { ReactPropTypes } from "react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 
-function MyPeopleCard( {details} ) {
+function MyPeopleCard( {details, id} ) {
+	console.log(id)
   return (
 	<Card style={{ minWidth: '18rem' }}> 						
 	<Card.Img variant="top" style={{width:"100%", height:"200px"}} src="https://starwars-visualguide.com/assets/img/characters/1.jpg" />
@@ -18,10 +19,10 @@ function MyPeopleCard( {details} ) {
 			 <p>hair color: {details.hair_color}</p>
 		 </Card.Text>
 	   <Card.Footer style={{display:"flex", justifyContent:"space-between"}}>
-	   <Link to={'/single/:theid'}>
+	   <Link to={'/single/:'+{id}}>
 		   <Button variant="primary">See More</Button>
 	   </Link>
-		   <Button variant="primary"><FavoriteBorderIcon/></Button>
+		   <Button variant="primary" style={{backgroundColor:"none", color:"white"}}><FavoriteBorderIcon/></Button>
 	   </Card.Footer>
 		</Card.Body>
 			 </Card>

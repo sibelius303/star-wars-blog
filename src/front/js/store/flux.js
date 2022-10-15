@@ -33,6 +33,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
+
+			getPlanets: async () => {
+				try {
+				  const response = await fetch("https://swapi.dev/api/planets");
+				  const data = await response.json();
+				  setStore({ planets: data.results });
+				} catch (error) {
+				  console.log(error);
+				}
+			  },
+			getPeople: async () => {
+				try {
+				  const response = await fetch("https://swapi.dev/api/people");
+				  const data = await response.json();
+				  setStore({ people:data.results });
+				} catch (error) {
+				  console.log(error);
+				}
+			  },
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
