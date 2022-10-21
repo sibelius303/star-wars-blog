@@ -18,7 +18,7 @@ function MyPeopleCard( {details, id} ) {
 			 <p>hair color: {details.hair_color}</p>
 		 </Card.Text>
 	   <Card.Footer style={{display:"flex", justifyContent:"space-between"}}>
-	   <Link to={`/details/${id}`}>
+	   <Link to={`/people/${id}`}>
 		   <Button variant="warning">See More</Button>
 	   </Link>
 		   <Button variant="warning" style={{backgroundColor:"none", color:"white"}}><FavoriteBorderIcon/></Button>

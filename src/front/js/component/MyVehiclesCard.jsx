@@ -21,7 +21,7 @@ function MyVehiclesCard( {details, id} ) {
 	  </Card.Text>
 	</Card.Body>
 	<Card.Footer style={{display:"flex", justifyContent:"space-between"}}>
-		<Link to={`/details/${id}`}>
+		<Link to={`/vehicles/${id}`}>
 			<Button variant="warning">See More</Button>
 		</Link>
 			<Button variant="warning"><FavoriteBorderIcon/></Button>

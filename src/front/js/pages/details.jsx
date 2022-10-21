@@ -6,7 +6,19 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 
 export const Details = props => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
+	const {type, theid} = useParams();
+	const [ details, setDetail] = useState({});
+
+	useEffect(()=>{
+		const getDetails = async ()=> {
+			let response = await fetch(`https://swapi.dev/api/${type}/${theid}`);
+			let data = await response.json();
+			console.log(data);
+			setDetail(data);
+			
+		};
+		getDetails();
+	},[])
 
 	return (
 		<div className="jumbotron">
