@@ -1,7 +1,7 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-function Dropdown() {
+export const Dropdown= ()=> {
   return (
     <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">w
@@ -16,5 +16,3 @@ function Dropdown() {
     </Dropdown>
   );
 }
-
-export default Dropdown;

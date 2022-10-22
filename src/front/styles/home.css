@@ -13,24 +13,13 @@
     overflow-y: hidden;
 }
 
-.containerPeople{
+.containerCard{
     display: flex;
     overflow-x: auto;
     gap: 10px;
     padding: 20px;
 }
 
-.containerPlanets{
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 20px;
+.containerCard::-webkit-scrollbar {
+    -webkit-appearance: none;
 }
-
-.containerVehicles{
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 20px;
-}
-

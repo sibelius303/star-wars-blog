@@ -61,6 +61,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  console.log(error);
 				}
 			  },
+			  getFilms: async () => {
+				try {
+				  const response = await fetch("https://swapi.dev/api/films");
+				  const data = await response.json();
+				  setStore({ films: data.results });
+				} catch (error) {
+				  console.log(error);
+				}
+			  },
+			  getStarships: async () => {
+				try {
+				  const response = await fetch("https://swapi.dev/api/starships");
+				  const data = await response.json();
+				  setStore({ starships: data.results });
+				} catch (error) {
+				  console.log(error);
+				}
+			  },
+			  getSpecies: async () => {
+				try {
+				  const response = await fetch("https://swapi.dev/api/species");
+				  const data = await response.json();
+				  setStore({ species: data.results });
+				} catch (error) {
+				  console.log(error);
+				}
+			  },
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
