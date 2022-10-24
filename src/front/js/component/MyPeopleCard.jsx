@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState, ReactPropTypes } from "react";
+import { Context } from "../store/appContext";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link, useParams } from "react-router-dom";
@@ -6,6 +7,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 
 function MyPeopleCard( {details, id} ) {
+	const { store, actions } = useContext(Context);
 
   return (
 	<Card style={{ minWidth: '18rem', color:"yellow", backgroundColor:"black" }}> 						
@@ -21,7 +23,7 @@ function MyPeopleCard( {details, id} ) {
 	   <Link to={`/people/${id}`}>
 		   <Button variant="warning">See More</Button>
 	   </Link>
-	   <Button variant="warning" style={{backgroundColor:"none", color:"white"}}><FavoriteBorderIcon/></Button>
+	   <Button onClick={(e)=>actions.manageFavorites(details.name)} variant="warning" style={{backgroundColor:"none", color:"white"}}>{actions.isIn(store.favorites,details.name) ? "X": <FavoriteBorderIcon/>}</Button>
 	   </Card.Footer>
 		</Card.Body>
 			 </Card>

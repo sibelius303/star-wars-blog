@@ -13,7 +13,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			favorites:[],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -32,6 +33,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}catch(error){
 					console.log("Error loading message from backend", error)
 				}
+			},
+
+			isIn: (favorites,name)=> {
+				let isIn = false;
+				for ( let favorite of favorites) {
+					if(favorite.name === name){
+						isIn = true
+					}
+				}
+				return (isIn)
+
+
+			},
+
+			manageFavorites: (name)=> {
+				const store = getStore()
+				let oldFavorites = [...store.favorites]
+				let isIn = getActions().isIn(oldFavorites,name)
+				let newFavorites;
+
+				for ( let favorite of oldFavorites) {
+					if(favorite.name === name){
+						isIn = true
+					}
+					
+				}
+				if (isIn) {
+					newFavorites = oldFavorites.filter(favorite => favorite.name !== name)
+					
+				} else {
+					newFavorites= [...store.favorites,{name:name}]
+					
+				}
+
+				setStore({
+					favorites:newFavorites
+				})
 			},
 
 			getPlanets: async () => {

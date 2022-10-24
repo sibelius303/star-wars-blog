@@ -29,7 +29,7 @@ export const Details = ()=> {
    			   	    <Col><Card.Img
 					variant="top"
 					style={{ width: "100%", height: "300px" }}
-					src={''}
+					src={`https://starwars-visualguide.com/assets/img/${type == "people" ? "characters":type}/${theid}.jpg`}
 					/></Col>
 					<Col xs={8}>
 						<div></div>

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext, useEffect, useState, ReactPropTypes } from "react";
+import { Context } from "../store/appContext";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link,useParams } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 function MyFilmsCard( {details, id} ) {
+	const { store, actions } = useContext(Context);
   return (
 	<Card style={{ minWidth: "18rem",color:"yellow", backgroundColor:"black" }}>
 	<Card.Img
@@ -24,7 +26,7 @@ function MyFilmsCard( {details, id} ) {
 		<Link to={`/films/${id}`}>
 			<Button variant="warning">See More</Button>
 		</Link>
-			<Button variant="warning"><FavoriteBorderIcon/></Button>
+			<Button onClick={(e)=>actions.manageFavorites(details.title)} variant="warning" style={{backgroundColor:"none", color:"white"}}>{actions.isIn(store.favorites,details.title) ? "X": <FavoriteBorderIcon/>}</Button>
 		</Card.Footer>
   </Card>
   );
