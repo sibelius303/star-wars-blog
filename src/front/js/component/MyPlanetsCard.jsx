@@ -13,7 +13,7 @@ function MyPlanetsCard( {details, id} ) {
 	<Card.Img
 	  variant="top"
 	  style={{ width: "100%", height: "200px" }}
-	  src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
+	  src={id == true ? "https://starwars-visualguide.com/assets/img/placeholder.jpg" :`https://starwars-visualguide.com/assets/img/planets/${id}.jpg` }
 	/>
 	<Card.Body>
 	  <Card.Title>{details.name}</Card.Title>
