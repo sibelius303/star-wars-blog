@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link,useParams } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteSharpIcon from '@mui/icons-material/FavoriteSharp';
 
 function MyStarshipsCard( {details, id} ) {
 	const { store, actions } = useContext(Context);
@@ -26,7 +27,7 @@ function MyStarshipsCard( {details, id} ) {
 		<Link to={`/starships/${id}`}>
 			<Button variant="warning">See More</Button>
 		</Link>
-			<Button onClick={(e)=>actions.manageFavorites(details.name)} variant="warning" style={{backgroundColor:"none", color:"white"}}>{actions.isIn(store.favorites,details.name) ? "X": <FavoriteBorderIcon/>}</Button>
+			<Button onClick={(e)=>actions.manageFavorites(details.name)} variant="warning" style={{backgroundColor:"none", color:"white"}}>{actions.isIn(store.favorites,details.name) ? <FavoriteSharpIcon/>: <FavoriteBorderIcon/>}</Button>
 		</Card.Footer>
   </Card>
   );
