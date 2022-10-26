@@ -13,7 +13,7 @@ function MyVehiclesCard( {details, id} ) {
 	<Card.Img
 	  variant="top"
 	  style={{ width: "100%", height: "200px" }}
-	  src={`https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`}
+	  src={id == 1 || id== 2 || id == 3|| id == 5 || id == 9 || id == 10  ? "https://starwars-visualguide.com/assets/img/placeholder.jpg" :`https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`}
 	/>
 	<Card.Body>
 	  <Card.Title>{details.name}</Card.Title>
