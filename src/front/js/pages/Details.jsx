@@ -128,7 +128,7 @@ export const Details = ()=> {
 							  <Col><Card.Img
 						variant="top"
 						style={{ width: "100%", height: "300px" }}
-						src={`https://starwars-visualguide.com/assets/img/${type == "people" ? "characters":type}/${theid}.jpg`}
+						src={theid == 1 || theid == 2 || theid == 3 || theid == 4 || theid == 6 || theid == 7 || theid== 8 ? "https://starwars-visualguide.com/assets/img/placeholder.jpg" :`https://starwars-visualguide.com/assets/img/${type == "people" ? "characters":type}/${theid}.jpg`}
 						/></Col>
 						<Col xs={8}>
 							<div>
